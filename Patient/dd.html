@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau de bord - Clinique 221</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com');
+
+        body {
+            font-family: 'Joan', serif;
+        }
+    </style>
+</head>
+
+<body class="h-screen bg-gray-100 w-full bg-cover bg-center bg-no-repeat">
+    <div class="flex h-full">
+        <!-- Sidebar -->
+        <div class="w-64 bg-[#2DC7FB] p-4 flex flex-col">
+            <div class="flex justify-center  gap-3">
+                <div class="rounded-full w-10 h-10 overflow-hidden border-2">
+                    <img src="./LOGO1.jpg" alt="Profil" class="w-full h-full object-cover">
+                </div>
+                <h1 class="font-bold text-xl text-center mb-10">Clinique <span class="text-white">221</span></h1>
+            </div>
+            <!-- Juste après la div du logo -->
+            <hr class="border-t border-white/30 mx-4 my-2">
+            <nav class="flex flex-col gap-6 text-white px-4">
+                <a href="#" class="flex items-center gap-4 hover:bg-blue-400 p-2 rounded transition"><i
+                        class="fas fa-chart-line w-5"></i><span>Dashboard</span></a>
+                <a href="#" class="flex items-center gap-4 hover:bg-blue-400 p-2 rounded transition"><i
+                        class="fas fa-envelope w-5"></i><span>Demande</span></a>
+                <a href="#" class="flex items-center gap-4 hover:bg-blue-400 p-2 rounded transition"><i
+                        class="fas fa-calendar-check w-5"></i><span>Rendez-vous</span></a>
+                <a href="#" class="flex items-center gap-4 hover:bg-blue-400 p-2 rounded transition"><i
+                        class="fas fa-concierge-bell w-5"></i><span>Prestations</span></a>
+                <a href="#" class="flex items-center gap-4 hover:bg-blue-400 p-2 rounded transition"><i
+                        class="fas fa-stethoscope w-5"></i><span>Consultation</span></a>
+            </nav>
+            <button
+                class="mt-auto w-full text-white px-4 py-2 flex items-center justify-center hover:bg-red-500 rounded transition mb-10">
+                <i class="fas fa-sign-out-alt mr-2"></i>Déconnexion
+            </button>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 flex flex-col gap-4 p-6 overflow-y-auto">
+            <!-- Header Search -->
+            <div class="bg-white h-14 rounded-xl shadow-lg flex items-center px-6 justify-between">
+                <div class="relative w-1/3">
+                    <input type="text"
+                        class="w-full h-9 pl-10 pr-4 bg-gray-50 border border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-400 outline-none text-sm"
+                        placeholder="Rechercher...">
+                    <i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-[#2DC7FB]"></i>
+                </div>
+                <div class="flex items-center gap-6 text-[#2DC7FB]">
+                    <i class="fas fa-moon cursor-pointer"></i>
+                    <i class="fas fa-bell cursor-pointer"></i>
+                    <div class="rounded-full w-9 h-9 overflow-hidden border-2 border-blue-100">
+                        <img src="./femme.jpg" alt="Profil" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page Title -->
+            <div class="bg-[#2DC7FB] flex justify-between items-center p-5 rounded-xl shadow-md">
+                <h1 class="font-bold text-xl text-white">Tableau de Bord</h1>
+                <button
+                    class="bg-white text-[#2DC7FB] px-4 py-2 rounded-lg font-bold text-sm shadow-sm hover:bg-gray-50 transition">
+                    <i class="fas fa-plus-circle mr-2"></i>Nouvelle demande
+                </button>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Card -->
+                <div
+                    class="bg-white rounded-xl shadow-md p-6 flex items-center justify-between border-t-4 border-red-500 hover:shadow-xl transition">
+                    <div>
+                        <p class="text-gray-500 text-sm font-semibold">Rendez-vous</p>
+                        <p class="text-2xl font-bold">50</p>
+                    </div>
+                    <div class="bg-red-500 w-12 h-12 flex items-center justify-center rounded-full text-white"><i
+                            class="fas fa-calendar-check"></i></div>
+                </div>
+                <div
+                    class="bg-white rounded-xl shadow-md p-6 flex items-center justify-between border-t-4 border-green-500 hover:shadow-xl transition">
+                    <div>
+                        <p class="text-gray-500 text-sm font-semibold">Demandes</p>
+                        <p class="text-2xl font-bold">50</p>
+                    </div>
+                    <div class="bg-green-500 w-12 h-12 flex items-center justify-center rounded-full text-white"><i
+                            class="fas fa-envelope"></i></div>
+                </div>
+                <div
+                    class="bg-white rounded-xl shadow-md p-6 flex items-center justify-between border-t-4 border-purple-500 hover:shadow-xl transition">
+                    <div>
+                        <p class="text-gray-500 text-sm font-semibold">Consultations</p>
+                        <p class="text-2xl font-bold">50</p>
+                    </div>
+                    <div class="bg-purple-500 w-12 h-12 flex items-center justify-center rounded-full text-white"><i
+                            class="fas fa-stethoscope"></i></div>
+                </div>
+                <div
+                    class="bg-white rounded-xl shadow-md p-6 flex items-center justify-between border-t-4 border-orange-500 hover:shadow-xl transition">
+                    <div>
+                        <p class="text-gray-500 text-sm font-semibold">Prestations</p>
+                        <p class="text-2xl font-bold">50</p>
+                    </div>
+                    <div class="bg-orange-500 w-12 h-12 flex items-center justify-center rounded-full text-white"><i
+                            class="fas fa-concierge-bell"></i></div>
+                </div>
+            </div>
+
+            <!-- Table Section -->
+            <div class="bg-white shadow-xl rounded-xl p-6 mt-4">
+                <h2 class="font-bold text-lg mb-4 text-gray-800">Liste des services</h2>
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <table class="w-full text-center border-collapse">
+                        <thead class="bg-gray-50 border-b border-gray-200">
+                            <tr class="divide-x divide-gray-200">
+                                <th class="px-4 py-3 text-sm font-bold text-gray-700">Demandes</th>
+                                <th class="px-4 py-3 text-sm font-bold text-gray-700">Rendez-vous</th>
+                                <th class="px-4 py-3 text-sm font-bold text-gray-700">Consultations</th>
+                                <th class="px-4 py-3 text-sm font-bold text-gray-700">Prestations</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr class="divide-x divide-gray-200 hover:bg-blue-50 transition cursor-default">
+                                <td class="px-4 py-4">20</td>
+                                <td class="px-4 py-4">10</td>
+                                <td class="px-4 py-4">05</td>
+                                <td class="px-4 py-4">05</td>
+                            </tr>
+                            <tr class="divide-x divide-gray-200 hover:bg-blue-50 transition cursor-default">
+                                <td class="px-4 py-4">15</td>
+                                <td class="px-4 py-4">08</td>
+                                <td class="px-4 py-4">12</td>
+                                <td class="px-4 py-4">02</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

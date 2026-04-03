@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body class="min-h-screen flex items-center justify-center p-2 bg-[#AAD4EC]"  style="font-family: 'joan';">
+    <div class="h-auto min-h-[400px] bg-white grid grid-cols-1 shadow-lg gap-7 p-5 rounded-4xl
+            w-full max-w-4xl md:grid-cols-2 items-center p:10 " >
+        <div class="">
+            <h1 class="font-bold text-2xl text-center">Inscription</h1>
+            <p class="text-black text-xs sm:text-base text-center">Veuillez vous inscrire en entrant vos identifiants</p>
+            <div class="flex flex-col justify-center ">
+                <form action="" class="flex flex-col gap-3">
+                    <label for="">Nom</label>
+                    <input type="text" class=" h-7 px-3 py-1 border border-gray-300 rounded-2xl p-2 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="nom" >
+                    <label for="">Prenom</label>
+                    <input type="text" class="h-7 px-3 py-1 border border-gray-300 rounded-2xl p-1  shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400 " 
+                        placeholder="prenom">
+                    <label for="">Email</label>
+                    <input type="email" class="h-7 px-3 py-1 border border-gray-300 rounded-2xl p-1  shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="email" >
+                        <label for="">Telephone</label>
+                    <input type="number" class="h-7 px-3 py-1 border border-gray-300 rounded-2xl p-1  shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="email" >
+                    <label for="">Mot de Passe</label>
+                    <input type="password" class="h-7 px-3 py-1 border  border-gray-300 rounded-2xl p-1  shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-400 "
+                        placeholder="mot de passe">
+                    <button class="bg-[#4099B5] text-white rounded-2xl p-1  shadow-lg cursor-pointer"><a href="./connexion.html">S'inscrire</a></button>
+                    <p>Déja un compte? 
+                        <a href="./connexion.html"><span  
+                                class="text-[#4099B5]">connectez-vous</span></a> </p>
+                </form>
+            </div>
+        </div>
+
+           <div class="relative w-full h-[90vh] md:h-[100vh] lg:h-[90vh] ">
+            <img src="./hopital.jpg" alt="" class="w-full h-full object-cover rounded-xl">
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>

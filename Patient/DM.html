@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau de bord</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body class="h-screen  bg-[url('./Frame25.png')] w-full bg-cover bg-center bg-no-repeat " style="font-family: 'joan';">
+    <div class="fixed inset-0 bg-black/70 flex items-center justify-center z-50">
+  <!-- Conteneur Modale : max-h-screen pour éviter de dépasser de l'écran -->
+  <div class="bg-white rounded-lg shadow-xl w-full max-w-lg overflow-y-auto max-h-[95vh]">
+    
+    <div class="relative p-4 text-center">
+      <a href="./listesDM.html"><button class="absolute right-4 top-4 text-gray-400 hover:text-gray-600">
+         <i class="fas fa-times"></i>
+      </button>
+      </a>
+      <h2 class="text-3xl font-bold text-gray-800 leading-tight">Ajout de demande</h2>
+      <p class="text-sm text-gray-400">Remplissez les détails ci-dessous</p>
+    </div>
+    <form class="p-5 space-y-3">
+      
+      <!-- Type -->
+      <div class="space-y-1">
+        <label class="block text-lg font-bold text-gray-700">Type</label>
+        <select class="w-full p-2 bg-gray-50 border border-gray-200 rounded text-sm text-gray-500 focus:ring-1 focus:ring-sky-400 outline-none">
+          <option>---sélectionner le type---</option>
+          <option value="Consultation">Consultation</option>
+          <option value="Prestation">Rendez-vous</option>
+        </select>
+      </div>
+
+      <!-- Date et Heure -->
+      <div class="grid grid-cols-2 gap-4">
+        <div class="space-y-1">
+          <label class="block text-sm font-bold text-gray-700">Date</label>
+          <input type="date" class="w-full p-2 bg-gray-50 border border-gray-200 rounded text-sm text-gray-500 focus:ring-1 focus:ring-sky-400 outline-none">
+        </div>
+        <div class="space-y-1">
+          <label class="block text-sm font-bold text-gray-700">Heure</label>
+          <input type="time" class="w-full p-2 bg-gray-50 border border-gray-200 rounded text-sm text-gray-500 focus:ring-1 focus:ring-sky-400 outline-none">
+        </div>
+      </div>
+
+      <!-- Spécialité -->
+      <div class="space-y-1">
+        <label class="block text-sm font-bold text-gray-700">Spécialité</label>
+        <select class="w-full p-2 bg-gray-50 border border-gray-200 rounded text-sm text-gray-500 focus:ring-1 focus:ring-sky-400 outline-none">
+          <option>---sélectionner la spécialité---</option>
+          <option>Cardiologie</option>
+          <option>Neurologie</option>
+            <option>Gynécologie</option>
+            <option>Dermatologie</option>
+            <option>Ophtalmologie</option>
+        </select>
+      </div>
+
+      <!-- Antécédents Médicaux (Plus compact) -->
+      <div class="space-y-2">
+        <label class="block text-sm font-bold text-gray-700">Antécédents Médicaux</label>
+        <div class="bg-gray-50 p-3 rounded-lg border border-gray-100 grid grid-cols-3 gap-2">
+          <!-- Item Checkbox -->
+          <label class="flex items-center space-x-2 cursor-pointer">
+            <input type="checkbox" class="w-4 h-4 text-sky-500 rounded border-gray-300">
+            <span class="text-xs text-gray-600">Diabète</span>
+          </label>
+          <label class="flex items-center space-x-2 cursor-pointer">
+            <input type="checkbox" class="w-4 h-4 text-sky-500 rounded border-gray-300">
+            <span class="text-xs text-gray-600">Hypertension</span>
+          </label>
+          <label class="flex items-center space-x-2 cursor-pointer">
+            <input type="checkbox" class="w-4 h-4 text-sky-500 rounded border-gray-300">
+            <span class="text-xs text-gray-600">Hépatite</span>
+          </label>
+          <label class="flex items-center space-x-2 cursor-pointer">
+            <input type="checkbox" class="w-4 h-4 text-sky-500 rounded border-gray-300">
+            <span class="text-xs text-gray-600">Cardiaque</span>
+          </label>
+          <label class="flex items-center space-x-2 cursor-pointer">
+            <input type="checkbox" class="w-4 h-4 text-sky-500 rounded border-gray-300">
+            <span class="text-xs text-gray-600">Infection</span>
+          </label>
+          <label class="flex items-center space-x-2 cursor-pointer">
+            <input type="checkbox" class="w-4 h-4 text-sky-500 rounded border-gray-300">
+            <span class="text-xs text-gray-600">Infection</span>
+          </label>
+          <label class="flex items-center space-x-2 cursor-pointer">
+            <input type="checkbox" class="w-4 h-4 text-sky-500 rounded border-gray-300">
+            <span class="text-xs text-gray-600">Cardiaque</span>
+          </label>
+          <label class="flex items-center space-x-2 cursor-pointer">
+            <input type="checkbox" class="w-4 h-4 text-sky-500 rounded border-gray-300">
+            <span class="text-xs text-gray-600">Infection</span>
+          </label>
+          <label class="flex items-center space-x-2 cursor-pointer">
+            <input type="checkbox" class="w-4 h-4 text-sky-500 rounded border-gray-300">
+            <span class="text-xs text-gray-600">Infection</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Bouton Soumettre -->
+      <div class="pt-2">
+        <button type="submit" class="w-full py-2.5 bg-sky-400 hover:bg-sky-500 text-white font-bold rounded shadow-sm transition-colors">
+          Soumettre
+        </button>
+      </div>
+
+    </form>
+  </div>
+
+
+       
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="flex h-full ">
+        <div class="w-64 bg-[#2DC7FB] p-4 flex flex-col hidden md:flex h-full">
+            <div class="flex justify-center  gap-3">
+                <div class="rounded-full w-10 h-10 overflow-hidden border-2">
+                    <img src="./LOGO1.jpg" alt="Profil" class="w-full h-full object-cover">
+                </div>
+                <h1 class="font-bold text-xl text-center mb-10">Clinique <span class="text-white">221</span></h1>
+            </div>
+            <!-- Juste après la div du logo -->
+            <hr class="border-t border-white/30 mx-4 my-2">
+            <nav class="flex flex-col  gap-3 text-white px-4 ">
+                <a href="./dashbord.html" class="flex items-center gap-4 hover:bg-white/50 p-2 rounded transition ">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="./listesDM.html" class="flex items-center gap-4 hover:bg-white/50 p-2 rounded transition">
+                    <i class="fas fa-envelope"></i>
+                    <span>Demande</span>
+                </a>
+                <a href="" class="flex items-center gap-4 hover:bg-white/50 p-2 rounded transition">
+                    <i class="fas fa-calendar-check"></i>
+                    <span>Rendez-vous</span>
+                </a>
+                <a href="" class="flex items-center gap-4 hover:bg-white/50 p-2 rounded transition">
+                    <i class="fas fa-concierge-bell"></i>
+                    <span>Prestations</span>
+                </a>
+                <a href="" class="flex items-center gap-4  hover:bg-white/50 p-2 rounded transition">
+                    <i class="fas fa-stethoscope"></i>
+                    <span>Consultation</span>
+                </a>
+            </nav>
+            <button type="submit"
+                class="w-full text-white px-4 py-2 flex mt-auto hover:bg-white/50 p-2 rounded transition">
+                <i class="fas fa-sign-out-alt mr-2"></i>
+                Déconnexion
+            </button>
+
+        </div>
+        <div class="flex justify-end m-2 md:hidden text-2xl">
+            <i class="fas fa-bars"></i>
+        </div>
+
+
+
+
+
+
+        <div class="flex-1 flex flex-col gap-4 p-6 overflow-y-auto">
+            <div class="hidden lg:flex items-center px-6 justify-between bg-white h-14 rounded-xl shadow-lg  ">
+                <div class="relative 1/3">
+                    <input type="text"
+                        class="h-6 w-full pl-10 pr-4 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 "
+                        placeholder="Rechercher...">
+                    <i class="fas fa-search text-sm absolute left-3 top-1/2 -translate-y-1/2 "></i>
+                </div>
+                <div class="flex items-center gap-6 text-[#2DC7FB] ">
+                    <i class="fas fa-moon cursor-pointer"></i>
+                    <i class="fas fa-bell cursor-pointer"></i>
+                    <div class="rounded-full w-9 h-9 overflow-hidden border-2 border-blue-100">
+                        <img src="./femme.jpg" alt="Profil" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+            </div>
+            <!-- premier card -->
+            <div class=" bg-[#2DC7FB] flex justify-between p-4 rounded-lg items-center">
+                <h1 class="font-bold text-xl text-white">Listes des demandes </h1>
+                <a href="./DM.html"><button
+                        class="rounded-xl px-4 py-2 shadow-sm bg-white text-[#2DC7FB] text-sm font-bold cursor-pointer"><i
+                            class="fas fa-plus-circle"></i> Nouvelle demande
+                    </button>
+                </a>
+
+            </div>
+            <!-- deuxieme card -->
+            <!-- deuxieme card -->
+            <div class="bg-white p-4 rounded-lg shadow-sm">
+                <!-- flex-wrap permet aux éléments de passer à la ligne sur tablette -->
+                <div class="flex flex-wrap lg:flex-nowrap items-center gap-4">
+
+                    <!-- Barre de recherche : prend toute la largeur sur tablette/mobile, auto sur PC -->
+                    <div class="relative w-full lg:w-1/3">
+                        <input type="text"
+                            class="h-10 w-full pl-10 pr-4 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                            placeholder="Rechercher par spécialité ...">
+                        <i class="fas fa-search text-sm absolute left-3 top-1/2 -translate-y-1/2 text-[#2DC7FB]"></i>
+                    </div>
+
+                    <!-- Les sélecteurs et la date : s'adaptent intelligemment -->
+                    <div class="flex flex-wrap md:flex-nowrap gap-3 w-full lg:w-auto">
+                        <select
+                            class="flex-1 md:flex-none rounded-xl px-4 py-2 border border-gray-100 shadow-sm bg-white text-sm font-bold outline-none">
+                            <option value="">Type de demande</option>
+                            <option value="">Consultation</option>
+                            <option value="">Prestation</option>
+                        </select>
+
+                        <select
+                            class="flex-1 md:flex-none rounded-xl px-4 py-2 border border-gray-100 shadow-sm bg-white text-sm font-bold outline-none">
+                            <option value="">Statut</option>
+                            <option value="">Validée</option>
+                            <option value="">Annulée</option>
+                            <option value="">En cours</option>
+                        </select>
+
+                        <input
+                            class="w-full md:w-auto rounded-xl px-4 py-2 border border-gray-100 shadow-sm bg-white text-[#2DC7FB] text-sm font-bold outline-none"
+                            type="date">
+                    </div>
+                </div>
+            </div>
+
+            <!-- troisieme card -->
+            <div class="bg-white shadow-xl h-full rounded-xl p-6 mt-4">
+                <h2 class="font-bold text-lg mb-4 text-gray-800">Listes des demandes </h2>
+
+                <div
+                    class="overflow-x-auto flex flex-col lg:border border-gray-200 rounded-lg overflow-hidden shadow-sm ">
+                    <table class="w-full text-center border-collapse min-w-[700px] md:min-w-full">
+                        <thead class="border-b border-gray-200 bg-[#2DC7FB] rounded-lg text-white ">
+                            <tr class="divide-x  divide-gray-200">
+                                <th class="px-4 py-3 text-sm">Date</th>
+                                <th class="px-4 py-3 text-sm">Heures</th>
+                                <th class="px-4 py-3 text-sm">Type</th>
+                                <th class="px-4 py-3 text-sm">Spécialité</th>
+                                <th class="px-4 py-3 text-sm">Antécédents</th>
+                                <th class="px-4 py-3 text-sm">Statut</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y  divide-gray-200">
+                            <tr class="divide-x divide-gray-200 hover:bg-blue-50 transition cursor-default   ">
+                                <td class="px-4 py-4">12/02/2025</td>
+                                <td class="px-4 py-4">08:00</td>
+                                <td class="px-4 py-4">Consultation</td>
+                                <td class="px-4 py-4">Cardiologue</td>
+                                <td class="px-4 py-4">Diabéte</td>
+                                <td class="px-4 py-4">Validé</td>
+                                <td class="px-4 py-4">
+                                    <button
+                                        class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr class="divide-x divide-gray-200 hover:bg-blue-50 transition cursor-default  ">
+                                <td class="px-4 py-4">25/06/2026</td>
+                                <td class="px-4 py-4">10:30</td>
+                                <td class="px-4 py-4">Prestation</td>
+                                <td class="px-4 py-4">Responsabe</td>
+                                <td class="px-4 py-4">Tension</td>
+                                <td class="px-4 py-4">En attente</td>
+                                <td class="px-4 py-4">
+                                    <button
+                                        class="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600 transition">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+
+                            <tr class="divide-x divide-gray-200 hover:bg-blue-50 transition cursor-default  ">
+                                <td class="px-4 py-4">02/02/2025</td>
+                                <td class="px-4 py-4">12:00</td>
+                                <td class="px-4 py-4">Consultation</td>
+                                <td class="px-4 py-4">Gynécologue</td>
+                                <td class="px-4 py-4">Tension</td>
+                                <td class="px-4 py-4">Refusé</td>
+                                <td class="px-4 py-4">
+                                    <button
+                                        class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+    </div>
+
+</body>
+
+</html>
