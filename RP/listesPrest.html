@@ -15,11 +15,13 @@
 <body class="h-screen bg-[url('./bg.jpg')] w-full bg-cover bg-center bg-no-repeat " style="font-family: 'joan';">
     <div class="flex h-full ">
         <div class="w-64 bg-[#2DC7FB] p-4 flex flex-col hidden md:flex h-full">
-            <div class="flex justify-center  gap-3">
-                <div class="rounded-full w-10 h-10 overflow-hidden border-2">
-                    <img src="./logo.jpg" alt="Profil" class="w-full h-full object-cover">
+            <div class="p-6 bg-[#2DC7FB] flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="rounded-full w-8 h-8 overflow-hidden border-2 border-white">
+                        <img src="./logo.jpg" alt="Logo" class="w-full h-full object-cover">
+                    </div>
+                    <h1 class="font-bold text-lg text-white">Clinique 221</h1>
                 </div>
-                <h1 class="font-bold text-xl text-center mb-10">Clinique <span class="text-white">221</span></h1>
             </div>
             <!-- Juste après la div du logo -->
             <hr class="border-t border-white/30 mx-4 my-2">
@@ -42,8 +44,45 @@
 
 
         </div>
-        <div class="flex justify-end m-2 md:hidden text-2xl">
-            <i class="fas fa-bars"></i>
+
+        <!-- mobile -->
+         <div class="fixed top-4 right-4 z-50 md:hidden bg-[#2DC7FB] text-white p-3 rounded-full shadow-lg cursor-pointer"
+            id="mobile-menu-button">
+            <i class="fas fa-bars" id="menu-icon"></i>
+        </div>
+
+        <div id="mobile-menu"
+            class="fixed top-0 left-0 h-full w-72 bg-white z-50 shadow-2xl transform -translate-x-full transition-transform duration-300 ease-in-out md:hidden flex flex-col">
+            <!-- Header du menu mobile -->
+            <div class="p-6 bg-[#2DC7FB] flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="rounded-full w-8 h-8 overflow-hidden border-2 border-white">
+                        <img src="./logo.jpg" alt="Logo" class="w-full h-full object-cover">
+                    </div>
+                    <h1 class="font-bold text-lg text-white">Clinique 221</h1>
+                </div>
+                <i class="fas fa-times text-white text-xl cursor-pointer" id="close-menu"></i>
+            </div>
+
+            <!-- Liens du menu -->
+            <nav class="flex flex-col p-4 gap-2">
+                <a href="./dashbord.html"
+                    class="flex items-center gap-4 p-3 rounded-lg bg-blue-50 text-[#2DC7FB] font-semibold">
+                    <i class="fas fa-chart-line w-6"></i> Dashboard
+                </a>
+                <a href="listesPrest.html" class="flex items-center gap-4 p-3 rounded-lg text-gray-600 hover:bg-gray-50 transition">
+                    <i class="fas fa-concierge-bell w-6"></i> Prestations
+                </a>
+             
+            </nav>
+
+            <!-- Pied du menu mobile -->
+            <div class="mt-auto p-4 border-t border-gray-100">
+                <a href="./index.html"
+                    class="flex items-center gap-4 p-3 text-red-500 hover:bg-red-50 rounded-lg transition">
+                    <i class="fas fa-sign-out-alt w-6"></i> Déconnexion
+                </a>
+            </div>
         </div>
 
 
@@ -194,6 +233,37 @@
 
         </div>
     </div>
+
+        <script>
+        const btn = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
+        const overlay = document.getElementById('menu-overlay');
+        const closeBtn = document.getElementById('close-menu');
+
+        function toggleMenu() {
+            const isHidden = menu.classList.contains('-translate-x-full');
+
+            if (isHidden) {
+                // Ouvrir le menu
+                menu.classList.remove('-translate-x-full');
+                overlay.classList.remove('hidden');
+                setTimeout(() => overlay.classList.add('opacity-100'), 10);
+                document.body.style.overflow = 'hidden'; // Empêche le scroll derrière
+            } else {
+                // Fermer le menu
+                menu.classList.add('-translate-x-full');
+                overlay.classList.remove('opacity-100');
+                setTimeout(() => {
+                    overlay.classList.add('hidden');
+                    document.body.style.overflow = '';
+                }, 300);
+            }
+        }
+
+        btn.addEventListener('click', toggleMenu);
+        closeBtn.addEventListener('click', toggleMenu);
+        overlay.addEventListener('click', toggleMenu);
+    </script>
 </body>
 
 </html>

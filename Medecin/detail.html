@@ -13,14 +13,16 @@
 </head>
 
 <body class="h-screen bg-[url('./bg.jpg')] w-full bg-cover bg-center bg-no-repeat " style="font-family: 'joan';">
-    
+
     <div class="flex h-full ">
         <div class="w-64 bg-[#2DC7FB] p-4 flex flex-col hidden md:flex h-full">
-            <div class="flex justify-center  gap-3">
-                <div class="rounded-full w-10 h-10 overflow-hidden border-2">
-                    <img src="./logo.jpg" alt="Profil" class="w-full h-full object-cover">
+            <div class="p-6 bg-[#2DC7FB] flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="rounded-full w-8 h-8 overflow-hidden border-2 border-white">
+                        <img src="./logo.jpg" alt="Logo" class="w-full h-full object-cover">
+                    </div>
+                    <h1 class="font-bold text-lg text-white">Clinique 221</h1>
                 </div>
-                <h1 class="font-bold text-xl text-center mb-10">Clinique <span class="text-white">221</span></h1>
             </div>
             <!-- Juste après la div du logo -->
             <hr class="border-t border-white/30 mx-4 my-2">
@@ -49,10 +51,48 @@
 
 
         </div>
-        <div class="flex justify-end m-2 md:hidden text-2xl">
-            <i class="fas fa-bars"></i>
+        <!-- mobile -->
+        <div class="fixed top-4 right-4 z-50 md:hidden bg-[#2DC7FB] text-white p-3 rounded-full shadow-lg cursor-pointer"
+            id="mobile-menu-button">
+            <i class="fas fa-bars" id="menu-icon"></i>
         </div>
 
+        <div id="mobile-menu"
+            class="fixed top-0 left-0 h-full w-72 bg-white z-50 shadow-2xl transform -translate-x-full transition-transform duration-300 ease-in-out md:hidden flex flex-col">
+            <!-- Header du menu mobile -->
+            <div class="p-6 bg-[#2DC7FB] flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div class="rounded-full w-8 h-8 overflow-hidden border-2 border-white">
+                        <img src="./logo.jpg" alt="Logo" class="w-full h-full object-cover">
+                    </div>
+                    <h1 class="font-bold text-lg text-white">Clinique 221</h1>
+                </div>
+                <i class="fas fa-times text-white text-xl cursor-pointer" id="close-menu"></i>
+            </div>
+
+            <!-- Liens du menu -->
+            <nav class="flex flex-col p-4 gap-2">
+                <a href="./dashbord.html"
+                    class="flex items-center gap-4 p-3 rounded-lg bg-blue-50 text-[#2DC7FB] font-semibold">
+                    <i class="fas fa-chart-line w-6"></i> Dashboard
+                </a>
+                <a href="list.html"
+                    class="flex items-center gap-4 p-3 rounded-lg text-gray-600 hover:bg-gray-50 transition">
+                    <i class="fas fa-calendar-check w-6"></i> Rendez-vous
+                </a>
+                <a href="#" class="flex items-center gap-4 p-3 rounded-lg text-gray-600 hover:bg-gray-50 transition">
+                    <i class="fas fa-stethoscope w-6"></i> Consultation
+                </a>
+            </nav>
+
+            <!-- Pied du menu mobile -->
+            <div class="mt-auto p-4 border-t border-gray-100">
+                <a href="./index.html"
+                    class="flex items-center gap-4 p-3 text-red-500 hover:bg-red-50 rounded-lg transition">
+                    <i class="fas fa-sign-out-alt w-6"></i> Déconnexion
+                </a>
+            </div>
+        </div>
 
 
         <div class="flex-1 flex flex-col gap-4 p-6 overflow-y-auto">
@@ -73,82 +113,119 @@
 
             </div>
             <div class=" bg-[#2DC7FB] flex justify-between p-4 rounded-lg items-center">
-                <h1 class="font-bold text-xl text-white">Détails d'une consultation</h1>
+                <h1 class="text-lg font-bold md:font-bold text-xl text-white">Détails d'une consultation</h1>
             </div>
-           
+
 
 
 
 
             <div class="bg-white shadow-xl h-auto rounded-xl p-6 mt-4">
                 <!-- Section Détails dans le Card Blanc -->
-    <!-- Header de la fiche -->
-    <div class="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-gray-100 pb-6 mb-8 gap-4">
-        <div class="flex items-center gap-4">
-            <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center text-[#2DC7FB]">
-                <i class="fas fa-user-md text-2xl"></i>
-            </div>
-            <div>
-                <h2 class="sm: text-xl lg:text-2xl font-bold text-gray-800">Fiche de Consultation</h2>
-                <p class="text-gray-400 text-sm italic">Référence : #REF-992025</p>
+                <!-- Header de la fiche -->
+                <div
+                    class="flex flex-col md:flex-row justify-between items-start md:items-center border-b border-gray-100 pb-6 mb-8 gap-4">
+                    <div class="flex items-center gap-4">
+                        <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center text-[#2DC7FB]">
+                            <i class="fas fa-user-md text-2xl"></i>
+                        </div>
+                        <div>
+                            <h2 class="sm: text-xl lg:text-2xl font-bold text-gray-800">Fiche de Consultation</h2>
+                            <p class="text-gray-400 text-sm italic">Référence : #REF-992025</p>
+                        </div>
+                    </div>
+                    <!-- Statut sous forme de badge Pill -->
+                    <span
+                        class="px-6 py-2 bg-green-100 text-green-700 text-xs font-bold uppercase tracking-widest rounded-full border border-green-200">
+                        Validé
+                    </span>
+                </div>
+
+                <!-- Grille d'informations -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
+
+                    <!-- Patient -->
+                    <div class="space-y-1">
+                        <p class="text-[11px] font-bold text-gray-400 uppercase tracking-wider">Patient</p>
+                        <p class="text-lg font-semibold text-gray-700">Aminata Diop</p>
+                        <p class="text-sm text-gray-500"><i class="fas fa-phone mr-2 text-xs"></i>+221 77 123 45 67</p>
+                    </div>
+
+                    <!-- Date et Heure -->
+                    <div class="space-y-1">
+                        <p class="text-[11px] font-bold text-gray-400">Date & Heure</p>
+                        <p class="text-lg font-semibold text-gray-700">12 Février 2025</p>
+                        <p class="text-sm text-blue-500 font-medium"><i class="far fa-clock mr-2 text-xs"></i>08:00 AM
+                        </p>
+                    </div>
+
+                    <!-- Spécialité -->
+                    <div class="space-y-1">
+                        <p class="text-[11px] font-bold text-gray-400">Spécialité / Type</p>
+                        <p class="text-lg font-semibold text-gray-700">Cardiologue</p>
+                        <p class="text-sm text-gray-500 italic">Consultation Générale</p>
+                    </div>
+
+                    <!-- Large zone pour les Antécédents -->
+                    <div class="md:col-span-2 lg:col-span-3 space-y-3 pt-4">
+                        <p class="text-[11px] font-bold text-gray-400 ">Antécédents</p>
+                        <div class="bg-gray-50 p-6 rounded-3xl border border-gray-100 min-h-[120px]">
+                            <p class="text-gray-600 italic">
+                                "La patiente présente des antécédents de diabète de type 2. Tension artérielle
+                                légèrement élevée lors de la dernière visite. Un suivi rigoureux du régime alimentaire
+                                est préconisé."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="flex justify-end gap-4 mt-2 border-t border-gray-50">
+                    <a href="./list.html">
+                        <button
+                            class="px-8 py-3 bg-[#2DC7FB] hover:bg-blue-500 text-white font-bold rounded-full shadow-lg shadow-blue-200 transition-all text-sm  flex items-center gap-2">
+                            <i class="fas fa-arrow-left"></i> Retour à la liste
+                        </button>
+                    </a>
+                </div>
+
+
+
+
             </div>
         </div>
-        <!-- Statut sous forme de badge Pill -->
-        <span class="px-6 py-2 bg-green-100 text-green-700 text-xs font-bold uppercase tracking-widest rounded-full border border-green-200">
-            Validé
-        </span>
     </div>
 
-    <!-- Grille d'informations -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
-        
-        <!-- Patient -->
-        <div class="space-y-1">
-            <p class="text-[11px] font-bold text-gray-400 uppercase tracking-wider">Patient</p>
-            <p class="text-lg font-semibold text-gray-700">Aminata Diop</p>
-            <p class="text-sm text-gray-500"><i class="fas fa-phone mr-2 text-xs"></i>+221 77 123 45 67</p>
-        </div>
+    <script>
+        const btn = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
+        const overlay = document.getElementById('menu-overlay');
+        const closeBtn = document.getElementById('close-menu');
 
-        <!-- Date et Heure -->
-        <div class="space-y-1">
-            <p class="text-[11px] font-bold text-gray-400">Date & Heure</p>
-            <p class="text-lg font-semibold text-gray-700">12 Février 2025</p>
-            <p class="text-sm text-blue-500 font-medium"><i class="far fa-clock mr-2 text-xs"></i>08:00 AM</p>
-        </div>
+        function toggleMenu() {
+            const isHidden = menu.classList.contains('-translate-x-full');
 
-        <!-- Spécialité -->
-        <div class="space-y-1">
-            <p class="text-[11px] font-bold text-gray-400">Spécialité / Type</p>
-            <p class="text-lg font-semibold text-gray-700">Cardiologue</p>
-            <p class="text-sm text-gray-500 italic">Consultation Générale</p>
-        </div>
+            if (isHidden) {
+                // Ouvrir le menu
+                menu.classList.remove('-translate-x-full');
+                overlay.classList.remove('hidden');
+                setTimeout(() => overlay.classList.add('opacity-100'), 10);
+                document.body.style.overflow = 'hidden'; // Empêche le scroll derrière
+            } else {
+                // Fermer le menu
+                menu.classList.add('-translate-x-full');
+                overlay.classList.remove('opacity-100');
+                setTimeout(() => {
+                    overlay.classList.add('hidden');
+                    document.body.style.overflow = '';
+                }, 300);
+            }
+        }
 
-        <!-- Large zone pour les Antécédents -->
-        <div class="md:col-span-2 lg:col-span-3 space-y-3 pt-4">
-            <p class="text-[11px] font-bold text-gray-400 ">Antécédents</p>
-            <div class="bg-gray-50 p-6 rounded-3xl border border-gray-100 min-h-[120px]">
-                <p class="text-gray-600 italic">
-                    "La patiente présente des antécédents de diabète de type 2. Tension artérielle légèrement élevée lors de la dernière visite. Un suivi rigoureux du régime alimentaire est préconisé."
-                </p>
-            </div>
-        </div>
-    </div>
-
-    
-    <div class="flex justify-end gap-4 mt-2 border-t border-gray-50">
-        <a href="./list.html">
-        <button class="px-8 py-3 bg-[#2DC7FB] hover:bg-blue-500 text-white font-bold rounded-full shadow-lg shadow-blue-200 transition-all text-sm  flex items-center gap-2">
-            <i class="fas fa-arrow-left"></i> Retour à la liste
-        </button>
-        </a>
-    </div>
-
-
-
-               
-            </div>
-        </div>
-    </div>
+        btn.addEventListener('click', toggleMenu);
+        closeBtn.addEventListener('click', toggleMenu);
+        overlay.addEventListener('click', toggleMenu);
+    </script>
 </body>
 
 </html>
